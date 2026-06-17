@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JEEVIKSHA — Organizing the Foundation of Bharat's Economy</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="JEEVIKSHA is a direct-matching digital ecosystem connecting rural laborers with farmers and contractors. Zero middlemen. Zero commissions. Securing fair wages and dignity.">
+  <meta name="keywords"
+    content="jeeviksha, rural labor, farmers, contractors, daily wage, zero middlemen, zero commission, bharat economy, PWA, agriculture hiring">
+  <meta name="author" content="JEEVIKSHA Private Limited">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="JEEVIKSHA — Organizing the Foundation of Bharat's Economy">
+  <meta property="og:description"
+    content="A direct-matching digital ecosystem connecting rural laborers with farmers and contractors. Zero middlemen. Zero commissions.">
+  <meta property="og:image" content="assets/hero_illustration.webp">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="JEEVIKSHA — Organizing the Foundation of Bharat's Economy">
+  <meta property="twitter:description"
+    content="A direct-matching digital ecosystem connecting rural laborers with farmers and contractors. Zero middlemen. Zero commissions.">
+  <meta property="twitter:image" content="assets/hero_illustration.webp">
+
+  <!-- Resource Hints for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Preload LCP Image -->
+  <link rel="preload" as="image" href="assets/hero_illustration.webp" fetchpriority="high" type="image/webp">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="index.css?v=1.7">
+
+  <!-- canvas-confetti for submit celebration -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
+
+  <script>
+    // Prevent layout shift/flash by checking saved language in head
+    if (localStorage.getItem('jeeviksha_lang')) {
+      document.documentElement.classList.add('lang-saved');
+      document.documentElement.lang = localStorage.getItem('jeeviksha_lang');
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- Language Selector Splash Screen Overlay -->
+  <div class="language-overlay" id="language-overlay" role="dialog" aria-modal="true" aria-labelledby="lang-overlay-title">
+    <div class="language-card">
+      <div class="language-logo">
+        JEEVIKSHA<span class="logo-dot"></span>
+      </div>
+      <h2 id="lang-overlay-title">Choose your preferred language</h2>
+      <h2 class="sub-lang" aria-hidden="true">अपनी पसंदीदा भाषा चुनें</h2>
+      <h2 class="sub-lang" aria-hidden="true">ನಿಮ್ಮ ಆದ್ಯತೆಯ ಭಾಷೆಯನ್ನು ಆಯ್ಕೆ ಮಾಡಿ</h2>
+      
+      <div class="lang-selector-grid">
+        <button class="lang-option" data-lang="en">
+          <span class="lang-title">English</span>
+          <span class="lang-subtitle">Secure & Digital Matching</span>
+        </button>
+        <button class="lang-option" data-lang="hi">
+          <span class="lang-title">हिंदी</span>
+          <span class="lang-subtitle">सुरक्षित और डिजिटल मिलान</span>
+        </button>
+        <button class="lang-option" data-lang="kn">
+          <span class="lang-title">ಕನ್ನಡ</span>
+          <span class="lang-subtitle">ಸುರಕ್ಷಿತ ಮತ್ತು ಡಿಜಿಟಲ್ ಸಂಪರ್ಕ</span>
+        </button>
+      </div>
+      
+      <button class="btn btn-primary" id="btn-lang-continue" disabled>
+        Continue / आगे बढ़ें / ಮುಂದುವರಿಯಿರಿ
+      </button>
+    </div>
+  </div>
+
+  <!-- Section A: Responsive Navigation Bar -->
+  <header>
+    <div class="container navbar">
+      <a href="#" class="logo" id="nav-logo" aria-label="JEEVIKSHA Home">
+        JEEVIKSHA<span class="logo-dot"></span>
+      </a>
+
+      <!-- Hamburger Menu Toggle Button (minimum 44x44px tap target) -->
+      <button class="nav-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-menu"
+        aria-label="Toggle navigation menu">
+        <span class="hamburger"></span>
+      </button>
+
+      <!-- Navigation Drawer Menu -->
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#vision" class="nav-link" id="link-vision" data-i18n="nav-vision">The Vision</a>
+        <a href="#how-it-works" class="nav-link" id="link-how-it-works" data-i18n="nav-how-it-works">How it Works</a>
+        <a href="#who-we-serve" class="nav-link" id="link-who-we-serve" data-i18n="nav-who-we-serve">Who We Serve</a>
+        
+        <!-- Language Selector in Navbar -->
+        <div class="nav-lang-select-container">
+          <label for="navbar-lang-select" class="sr-only">Change Language</label>
+          <div class="nav-lang-select-inner">
+            <!-- Globe / Language icon -->
+            <svg class="nav-lang-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <select id="navbar-lang-select" class="nav-lang-select" aria-label="Change language">
+              <option value="en">English</option>
+              <option value="hi">हिंदी (Hindi)</option>
+              <option value="kn">ಕನ್ನಡ (Kannada)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Animated Theme Toggle -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+          <!-- Sun icon (shown in dark mode) -->
+          <svg class="theme-icon icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg class="theme-icon icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <a href="#pilot" class="btn btn-primary" id="cta-nav-pilot" data-i18n="nav-join-pilot">Join Pilot</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Section B: The Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1 data-i18n="hero-title">Organizing the Foundation of <span class="highlight">Bharat's Economy</span></h1>
+          <p class="hero-subtitle" data-i18n="hero-subtitle">
+            A direct-matching digital ecosystem connecting rural laborers with farmers and contractors. Zero middlemen.
+            Zero commissions. Securing livelihoods, dignity, and fair wages.
+          </p>
+          <div class="hero-actions">
+            <a href="#pilot" class="btn btn-primary" id="cta-hero-primary" data-i18n="hero-cta-primary">Join the Pilot Program</a>
+            <a href="#vision" class="btn btn-secondary" id="cta-hero-secondary" data-i18n="hero-cta-secondary">Read Our Vision</a>
+          </div>
+        </div>
+        <div class="hero-image-container">
+          <div class="hero-image-wrapper">
+            <img src="assets/hero_illustration.webp"
+              alt="JEEVIKSHA digital network connecting rural agricultural workers and construction contractors"
+              class="hero-img" width="480" height="480" fetchpriority="high" loading="eager">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section C: The Vision -->
+    <section class="vision-section" id="vision">
+      <div class="container vision-container">
+        <div class="text-center">
+          <span class="vision-badge reveal reveal-scale" data-i18n="vision-badge">Empowering Bharat</span>
+          <h2 class="reveal reveal-up reveal-delay-1" data-i18n="vision-title">The Vision Behind JEEVIKSHA</h2>
+          <p class="vision-text reveal reveal-up reveal-delay-2" data-i18n="vision-text">
+            For decades, India's rural workforce has been trapped in an informal system dictated by exploitative
+            intermediaries and informational asymmetry. Our vision is to bring dignity, transparency, and digital access
+            to rural labor. We are replacing word-of-mouth hiring with a merit-based, transaction-backed digital
+            infrastructure that protects livelihoods and secures fair wages.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section D: Problem vs. Solution -->
+    <section class="comparison-section" id="how-it-works">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 class="section-title reveal reveal-up" data-i18n="compare-title">Re-Engineering Rural Employment</h2>
+          <p class="section-subtitle reveal reveal-up reveal-delay-1" data-i18n="compare-subtitle">Comparing the traditional exploitative thekedar model against our modern digital
+            ecosystem.</p>
+        </div>
+        <div class="comparison-grid">
+          <!-- The Problem Column -->
+          <article class="comparison-column problem-col reveal">
+            <h3>
+              <!-- Warning SVG Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+                <line x1="12" y1="9" x2="12" y2="13" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg>
+              <span data-i18n="problem-title">The Traditional Problem</span>
+            </h3>
+            <ul class="item-list">
+              <li class="comparison-item">
+                <div class="item-icon-wrapper">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="#DC2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </div>
+                <div class="item-content">
+                  <h4 data-i18n="problem-1-title">Thekedar System Exploitation</h4>
+                  <p data-i18n="problem-1-desc">Exploitative middlemen dictate arbitrary wages and siphon off labourers' true daily earnings
+                    through steep commissions and informal debt traps.</p>
+                </div>
+              </li>
+              <li class="comparison-item">
+                <div class="item-icon-wrapper">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="#DC2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </div>
+                <div class="item-content">
+                  <h4 data-i18n="problem-2-title">Chronic Seasonal Supply Deficits</h4>
+                  <p data-i18n="problem-2-desc">Agricultural districts face severe, time-sensitive labour shortages during peak Kharif and Rabi
+                    cycles due to uncoordinated regional mobility.</p>
+                </div>
+              </li>
+              <li class="comparison-item">
+                <div class="item-icon-wrapper">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="#DC2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </div>
+                <div class="item-content">
+                  <h4 data-i18n="problem-3-title">Informational Asymmetry</h4>
+                  <p data-i18n="problem-3-desc">Employers lack real-time visibility into local labour pools, while workers lack verifiable
+                    professional identities or wage histories.</p>
+                </div>
+              </li>
+            </ul>
+          </article>
+
+          <!-- The Solution Column -->
+          <article class="comparison-column solution-col reveal">
+            <h3>
+              <!-- Success/Check SVG Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+              <span data-i18n="solution-title">The JEEVIKSHA Solution</span>
+            </h3>
+            <ul class="item-list">
+              <li class="comparison-item">
+                <div class="item-icon-wrapper">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="#00246B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <div class="item-content">
+                  <h4 data-i18n="solution-1-title">0% Worker Commission</h4>
+                  <p data-i18n="solution-1-desc">Laborers face zero commission charges. They retain 100% of their hard-earned manual daily wages
+                    directly routed to their bank accounts.</p>
+                </div>
+              </li>
+              <li class="comparison-item">
+                <div class="item-icon-wrapper">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="#00246B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <div class="item-content">
+                  <h4 data-i18n="solution-2-title">Algorithmic Matching Engine</h4>
+                  <p data-i18n="solution-2-desc">Processes employer demands in real-time, cross-referencing precise geofenced pin codes to deploy
+                    labor exactly where and when required.</p>
+                </div>
+              </li>
+              <li class="comparison-item">
+                <div class="item-icon-wrapper">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="#00246B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <div class="item-content">
+                  <h4 data-i18n="solution-3-title">Progressive Web App (PWA)</h4>
+                  <p data-i18n="solution-3-desc">Built on an optimised HTML, CSS, and JS stack designed to run smoothly on budget smartphones and
+                    low-bandwidth connections.</p>
+                </div>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section E: Who We Serve -->
+    <section class="serve-section" id="who-we-serve">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 class="section-title reveal reveal-up" data-i18n="serve-title">Built for Bharat's Dual Market</h2>
+          <p class="section-subtitle reveal reveal-up reveal-delay-1" data-i18n="serve-subtitle">Tailored technology solving two distinct challenges with one unified ecosystem.
+          </p>
+        </div>
+        <div class="serve-grid">
+          <!-- Card 1: For the Workforce -->
+          <article class="serve-card reveal reveal-left" id="serve-workforce">
+            <div class="serve-icon">
+              <!-- Users Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h3 data-i18n="workforce-title">For the Workforce</h3>
+            <p data-i18n="workforce-desc">A voice-first, vernacular-supported progressive web app (PWA) allowing daily wage laborers to bypass
+              complex tech barriers and find local, fair-paying work instantly.</p>
+            <ul class="serve-features-list">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span data-i18n="workforce-feat-1">Voice-guided vernacular navigation</span>
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span data-i18n="workforce-feat-2">Direct-to-bank instant daily payout</span>
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span data-i18n="workforce-feat-3">Verifiable digital professional identity</span>
+              </li>
+            </ul>
+            <a href="#pilot" class="btn btn-secondary" style="margin-top: auto;" id="cta-serve-workforce" data-i18n="workforce-cta">Join workforce
+              pilot</a>
+          </article>
+
+          <!-- Card 2: For Farmers & Contractors -->
+          <article class="serve-card reveal reveal-right reveal-delay-2" id="serve-employers">
+            <div class="serve-icon">
+              <!-- Briefcase Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+              </svg>
+            </div>
+            <h3 data-i18n="employer-title">For Farmers & Contractors</h3>
+            <p data-i18n="employer-desc">A robust institutional SaaS dashboard featuring pre-verified labor compliance, transparent wallet-based
+              payments, and real-time attendance trackers.</p>
+            <ul class="serve-features-list">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span data-i18n="employer-feat-1">Secure prepaid hiring wallet</span>
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span data-i18n="employer-feat-2">Automated geofenced attendance</span>
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span data-i18n="employer-feat-3">Instant compliance & tax reporting</span>
+              </li>
+            </ul>
+            <a href="#pilot" class="btn btn-primary" style="margin-top: auto;" id="cta-serve-employers" data-i18n="employer-cta">Access SaaS
+              dashboard</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Section F: Institutional Footer -->
+  <footer id="pilot">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h2>JEEVIKSHA</h2>
+        <p data-i18n="footer-info">Rebuilding Bharat's rural workforce infrastructure with transparency, dignity, and technological
+          accessibility.</p>
+      </div>
+      <div class="footer-contacts">
+        <!-- Email Contact Card -->
+        <div class="contact-card">
+          <div class="contact-icon-wrapper">
+            <!-- Mail Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m22 2-7 20-4-9-9-4Z" />
+              <path d="M22 2 11 13" />
+            </svg>
+          </div>
+          <div class="contact-details">
+            <h4 data-i18n="footer-email-title">Email Administration</h4>
+            <p><a href="mailto:bhuvanexpo@gmail.com" id="footer-email">bhuvanexpo@gmail.com</a></p>
+          </div>
+        </div>
+
+        <!-- Phone Contact Card -->
+        <div class="contact-card">
+          <div class="contact-icon-wrapper">
+            <!-- Phone Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+          </div>
+          <div class="contact-details">
+            <h4 data-i18n="footer-call-title">Call Program Office</h4>
+            <p><a href="tel:+916363500622" id="footer-phone">+91 6363500622</a></p>
+          </div>
+        </div>
+
+        <!-- Location Contact Card -->
+        <div class="contact-card">
+          <div class="contact-icon-wrapper">
+            <!-- Map Pin Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div class="contact-details">
+            <h4 data-i18n="footer-location-title">Location</h4>
+            <p id="footer-location" data-i18n="footer-location-text">Bangalore, Karnataka</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="footer-copy" id="footer-copyright" data-i18n="footer-copy">
+        &copy; 2026 JEEVIKSHA Private Limited. All Rights Reserved.
+      </p>
+      <div class="footer-links">
+        <a href="#" class="footer-link" id="footer-link-privacy" data-i18n="footer-link-privacy">Privacy Policy</a>
+        <a href="#" class="footer-link" id="footer-link-terms" data-i18n="footer-link-terms">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Overlay Form Dashboard -->
+  <div class="modal-overlay" id="pilot-modal" aria-hidden="true" role="dialog">
+    <div class="modal-card magic-card" id="modal-card">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      
+      <div class="modal-header">
+        <h3 data-i18n="modal-title">Join the Pilot Program</h3>
+        <p data-i18n="modal-subtitle">Enter your details below to secure early access and partner with JEEVIKSHA.</p>
+      </div>
+      
+      <form class="modal-form" id="pilot-form">
+        <!-- Name Input -->
+        <div class="form-group">
+          <label for="pilot-name" data-i18n="modal-label-name">Full Name</label>
+          <input type="text" id="pilot-name" name="name" placeholder="Enter your full name" data-i18n-placeholder="modal-placeholder-name" required minlength="2">
+        </div>
+        
+        <!-- Role/Who They Are Selection -->
+        <div class="form-group">
+          <label data-i18n="modal-label-role">Who Are You?</label>
+          <div class="role-selector">
+            <label class="role-option">
+              <input type="radio" name="role" value="workforce" checked>
+              <span class="role-box">
+                <span class="role-title" data-i18n="role-title-workforce">Workforce / Laborer</span>
+                <span class="role-desc" data-i18n="role-desc-workforce">Looking for local, fair-paying work</span>
+              </span>
+            </label>
+            <label class="role-option">
+              <input type="radio" name="role" value="farmer">
+              <span class="role-box">
+                <span class="role-title" data-i18n="role-title-farmer">Farmer</span>
+                <span class="role-desc" data-i18n="role-desc-farmer">Need time-sensitive agricultural labor</span>
+              </span>
+            </label>
+            <label class="role-option">
+              <input type="radio" name="role" value="contractor">
+              <span class="role-box">
+                <span class="role-title" data-i18n="role-title-contractor">Contractor</span>
+                <span class="role-desc" data-i18n="role-desc-contractor">Hiring for construction or civil works</span>
+              </span>
+            </label>
+            <label class="role-option">
+              <input type="radio" name="role" value="institution">
+              <span class="role-box">
+                <span class="role-title" data-i18n="role-title-institution">Institution</span>
+                <span class="role-desc" data-i18n="role-desc-institution">Government or enterprise partner</span>
+              </span>
+            </label>
+          </div>
+        </div>
+        
+        <!-- Spoken Languages Selection -->
+        <div class="form-group">
+          <label data-i18n="modal-label-languages">Spoken Languages (Select all that apply)</label>
+          <div class="languages-selector">
+            <label class="lang-check-option">
+              <input type="checkbox" name="languages" value="english" checked>
+              <span class="lang-check-box">English</span>
+            </label>
+            <label class="lang-check-option">
+              <input type="checkbox" name="languages" value="hindi">
+              <span class="lang-check-box">हिंदी (Hindi)</span>
+            </label>
+            <label class="lang-check-option">
+              <input type="checkbox" name="languages" value="kannada">
+              <span class="lang-check-box">ಕನ್ನಡ (Kannada)</span>
+            </label>
+          </div>
+        </div>
+        
+        <!-- Contact Number Input -->
+        <div class="form-group">
+          <label for="pilot-phone" data-i18n="modal-label-phone">Contact Number (WhatsApp preferred)</label>
+          <div class="phone-input-wrapper">
+            <span class="country-code">+91</span>
+            <input type="tel" id="pilot-phone" name="phone" placeholder="10-digit mobile number" data-i18n-placeholder="modal-placeholder-phone" required pattern="[6789][0-9]{9}">
+          </div>
+        </div>
+        
+        <!-- Submit Button (ShimmerButton) -->
+        <button type="submit" class="btn btn-primary btn-submit shimmer-btn" id="submit-pilot-form">
+          <span data-i18n="modal-submit">Submit Request</span>
+          <svg class="spinner" id="form-spinner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="display:none; width: 18px; height: 18px; margin-left: 8px;"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle><path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"></path></svg>
+        </button>
+      </form>
+      
+      <!-- Success View (hidden initially) -->
+      <div class="modal-success" id="pilot-success" style="display: none;">
+        <div class="success-icon-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#00246B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3 data-i18n="success-title">Request Submitted!</h3>
+        <p data-i18n="success-desc">Thank you for reaching out. Our program office will contact you at <strong id="success-phone"></strong> within 24 hours to guide you through the next steps.</p>
+        
+        <div class="success-actions">
+          <a href="https://chat.whatsapp.com/Ist5p24sn6zC35NSpGE287?s=cl&p=i&ilr=0" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" id="btn-whatsapp-community">
+            <!-- WhatsApp Brand Icon SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 448 512" fill="currentColor" style="margin-right: 8px;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+            <span data-i18n="success-cta-whatsapp">Join WhatsApp Community</span>
+          </a>
+          <button class="btn btn-secondary" id="btn-success-close" data-i18n="success-cta-done">Done</button>
+        </div>
+    </div>
+  </div>
+
+  <!-- Clean interactive Javascript -->
+  <script type="module">
+    // Firebase Configuration - Replace with your own project configuration details from Firebase Console
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.firebasestorage.app",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+    import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+
+    let db = null;
+    let isFirebaseConfigured = false;
+
+    // Check if configuration has been updated by the developer
+    if (firebaseConfig.apiKey && firebaseConfig.apiKey !== "YOUR_API_KEY") {
+      try {
+        const app = initializeApp(firebaseConfig);
+        db = getFirestore(app);
+        isFirebaseConfigured = true;
+        console.log("JEEVIKSHA: Firebase initialized successfully with Cloud Firestore.");
+      } catch (error) {
+        console.error("JEEVIKSHA: Firebase initialization failed:", error);
+      }
+    } else {
+      console.warn("JEEVIKSHA: Firebase is running with placeholder credentials. Form submissions will fall back to local storage (offline database mode). Please update 'firebaseConfig' in index.html to enable Cloud Firestore.");
+    }
+
+    // Helper to cache submissions locally (offline fallback mode)
+    const saveSubmissionLocally = (submission) => {
+      try {
+        const localData = localStorage.getItem('jeeviksha_offline_submissions');
+        const submissions = localData ? JSON.parse(localData) : [];
+        submissions.push({
+          ...submission,
+          offlineSavedAt: new Date().toISOString()
+        });
+        localStorage.setItem('jeeviksha_offline_submissions', JSON.stringify(submissions));
+        console.log("JEEVIKSHA: Form submission cached locally:", submission);
+      } catch (e) {
+        console.error("JEEVIKSHA: Failed to save submission locally:", e);
+      }
+    };
+
+    // Site translations dictionary (supports English, Hindi, and Kannada)
+    const TRANSLATIONS = {
+      en: {
+        "nav-vision": "The Vision",
+        "nav-how-it-works": "How it Works",
+        "nav-who-we-serve": "Who We Serve",
+        "nav-join-pilot": "Join Pilot",
+        "hero-title": "Organizing the Foundation of <span class=\"highlight\">Bharat's Economy</span>",
+        "hero-subtitle": "A direct-matching digital ecosystem connecting rural laborers with farmers and contractors. Zero middlemen. Zero commissions. Securing livelihoods, dignity, and fair wages.",
+        "hero-cta-primary": "Join the Pilot Program",
+        "hero-cta-secondary": "Read Our Vision",
+        "vision-badge": "Empowering Bharat",
+        "vision-title": "The Vision Behind JEEVIKSHA",
+        "vision-text": "For decades, India's rural workforce has been trapped in an informal system dictated by exploitative intermediaries and informational asymmetry. Our vision is to bring dignity, transparency, and digital access to rural labor. We are replacing word-of-mouth hiring with a merit-based, transaction-backed digital infrastructure that protects livelihoods and secures fair wages.",
+        "compare-title": "Re-Engineering Rural Employment",
+        "compare-subtitle": "Comparing the traditional exploitative thekedar model against our modern digital ecosystem.",
+        "problem-title": "The Traditional Problem",
+        "problem-1-title": "Thekedar System Exploitation",
+        "problem-1-desc": "Exploitative middlemen dictate arbitrary wages and siphon off labourers' true daily earnings through steep commissions and informal debt traps.",
+        "problem-2-title": "Chronic Seasonal Supply Deficits",
+        "problem-2-desc": "Agricultural districts face severe, time-sensitive labour shortages during peak Kharif and Rabi cycles due to uncoordinated regional mobility.",
+        "problem-3-title": "Informational Asymmetry",
+        "problem-3-desc": "Employers lack real-time visibility into local labour pools, while workers lack verifiable professional identities or wage histories.",
+        "solution-title": "The JEEVIKSHA Solution",
+        "solution-1-title": "0% Worker Commission",
+        "solution-1-desc": "Laborers face zero commission charges. They retain 100% of their hard-earned manual daily wages directly routed to their bank accounts.",
+        "solution-2-title": "Algorithmic Matching Engine",
+        "solution-2-desc": "Processes employer demands in real-time, cross-referencing precise geofenced pin codes to deploy labor exactly where and when required.",
+        "solution-3-title": "Progressive Web App (PWA)",
+        "solution-3-desc": "Built on an optimised HTML, CSS, and JS stack designed to run smoothly on budget smartphones and low-bandwidth connections.",
+        "serve-title": "Built for Bharat's Dual Market",
+        "serve-subtitle": "Tailored technology solving two distinct challenges with one unified ecosystem.",
+        "workforce-title": "For the Workforce",
+        "workforce-desc": "A voice-first, vernacular-supported progressive web app (PWA) allowing daily wage laborers to bypass complex tech barriers and find local, fair-paying work instantly.",
+        "workforce-feat-1": "Voice-guided vernacular navigation",
+        "workforce-feat-2": "Direct-to-bank instant daily payout",
+        "workforce-feat-3": "Verifiable digital professional identity",
+        "workforce-cta": "Join workforce pilot",
+        "employer-title": "For Farmers & Contractors",
+        "employer-desc": "A robust institutional SaaS dashboard featuring pre-verified labor compliance, transparent wallet-based payments, and real-time attendance trackers.",
+        "employer-feat-1": "Secure prepaid hiring wallet",
+        "employer-feat-2": "Automated geofenced attendance",
+        "employer-feat-3": "Instant compliance & tax reporting",
+        "employer-cta": "Access SaaS dashboard",
+        "footer-info": "Rebuilding Bharat's rural workforce infrastructure with transparency, dignity, and technological accessibility.",
+        "footer-email-title": "Email Administration",
+        "footer-call-title": "Call Program Office",
+        "footer-location-title": "Location",
+        "footer-location-text": "Bangalore, Karnataka",
+        "footer-copy": "&copy; 2026 JEEVIKSHA Private Limited. All Rights Reserved.",
+        "footer-link-privacy": "Privacy Policy",
+        "footer-link-terms": "Terms of Service",
+        "modal-title": "Join the Pilot Program",
+        "modal-subtitle": "Enter your details below to secure early access and partner with JEEVIKSHA.",
+        "modal-label-name": "Full Name",
+        "modal-placeholder-name": "Enter your full name",
+        "modal-label-role": "Who Are You?",
+        "role-title-workforce": "Workforce / Laborer",
+        "role-desc-workforce": "Looking for local, fair-paying work",
+        "role-title-farmer": "Farmer",
+        "role-desc-farmer": "Need time-sensitive agricultural labor",
+        "role-title-contractor": "Contractor",
+        "role-desc-contractor": "Hiring for construction or civil works",
+        "role-title-institution": "Institution",
+        "role-desc-institution": "Government or enterprise partner",
+        "modal-label-languages": "Spoken Languages (Select all that apply)",
+        "modal-label-phone": "Contact Number (WhatsApp preferred)",
+        "modal-placeholder-phone": "10-digit mobile number",
+        "modal-submit": "Submit Request",
+        "success-title": "Request Submitted!",
+        "success-desc": "Thank you for reaching out. Our program office will contact you at <strong id=\"success-phone\"></strong> within 24 hours to guide you through the next steps.",
+        "success-cta-whatsapp": "Join WhatsApp Community",
+        "success-cta-done": "Done"
+      },
+      hi: {
+        "nav-vision": "दृष्टिकोण",
+        "nav-how-it-works": "यह कैसे काम करता है",
+        "nav-who-we-serve": "हम किसकी सेवा करते हैं",
+        "nav-join-pilot": "पायलट से जुड़ें",
+        "hero-title": "भारत की अर्थव्यवस्था की <span class=\"highlight\">नींव को व्यवस्थित करना</span>",
+        "hero-subtitle": "ग्रामीण कामगारों को किसानों और ठेकेदारों से जोड़ने वाला एक सीधा डिजिटल पारिस्थितिकी तंत्र। शून्य बिचौलिए। शून्य कमीशन। आजीविका, गरिमा और उचित मजदूरी सुनिश्चित करना।",
+        "hero-cta-primary": "पायलट कार्यक्रम में शामिल हों",
+        "hero-cta-secondary": "हमारा दृष्टिकोण पढ़ें",
+        "vision-badge": "सशक्त भारत",
+        "vision-title": "जीविक्षा के पीछे का दृष्टिकोण",
+        "vision-text": "दशकों से, भारत का ग्रामीण कार्यबल शोषक बिचौलियों और सूचना की कमी के अनौपचारिक जाल में फंसा हुआ है। हमारा दृष्टिकोण ग्रामीण श्रम को गरिमा, पारदर्शिता और डिजिटल पहुंच प्रदान करना है। हम आपसी बातचीत पर आधारित काम के बदले एक योग्यता-आधारित, लेन-देन समर्थित डिजिटल बुनियादी ढांचा ला रहे हैं जो आजीविका की रक्षा करता है और उचित मजदूरी सुनिश्चित करता है।",
+        "compare-title": "ग्रामीण रोजगार का पुनर्गठन",
+        "compare-subtitle": "पारंपरिक शोषक ठेकेदारी मॉडल की तुलना हमारे आधुनिक डिजिटल पारिस्थितिकी तंत्र से करें।",
+        "problem-title": "पारंपरिक समस्या",
+        "problem-1-title": "ठेकेदार प्रणाली द्वारा शोषण",
+        "problem-1-desc": "शोषक बिचौलिए मनमानी मजदूरी तय करते हैं और कर्ज के जाल के माध्यम से मजदूरों की वास्तविक दैनिक कमाई का एक बड़ा हिस्सा कमीशन के रूप में वसूलते हैं।",
+        "problem-2-title": "लगातार मौसमी आपूर्ति घाटा",
+        "problem-2-desc": "क्षेत्रीय आवाजाही में समन्वय की कमी के कारण कृषि जिलों को खरीफ और रबी की फसल के समय गंभीर श्रम कमी का सामना करना पड़ता है।",
+        "problem-3-title": "सूचना की कमी",
+        "problem-3-desc": "नियोक्ताओं के पास स्थानीय श्रम बल की वास्तविक समय में जानकारी नहीं होती, जबकि श्रमिकों के पास कोई सत्यापित पहचान या मजदूरी का इतिहास नहीं होता है।",
+        "solution-title": "जीविक्षा (JEEVIKSHA) का समाधान",
+        "solution-1-title": "0% श्रमिक कमीशन",
+        "solution-1-desc": "श्रमिकों के लिए शून्य कमीशन शुल्क। वे अपनी मेहनत की शत-प्रतिशत दैनिक मजदूरी सीधे अपने बैंक खातों में प्राप्त करते हैं।",
+        "solution-2-title": "एल्गोरिथमिक मैचिंग इंजन",
+        "solution-2-desc": "नियोक्ता की जरूरतों को वास्तविक समय में संसाधित करता है, और सटीक जियोफेंस्ड पिन कोड के माध्यम से जहां और जब आवश्यकता हो वहां श्रम तैनात करता है।",
+        "solution-3-title": "प्रोग्रेसिव वेब ऐप (PWA)",
+        "solution-3-desc": "कम बजट वाले स्मार्टफोन और कमजोर नेटवर्क कनेक्शन पर भी सुचारू रूप से चलने के लिए अनुकूलित HTML, CSS और JS पर निर्मित।",
+        "serve-title": "भारत के दोहरे बाजार के लिए निर्मित",
+        "serve-subtitle": "एक एकीकृत पारिस्थितिकी तंत्र के साथ दो अलग-अलग चुनौतियों का समाधान करने वाली तकनीक।",
+        "workforce-title": "कार्यबल (मजदूरों) के लिए",
+        "workforce-desc": "आवाज और स्थानीय भाषाओं पर आधारित एक प्रोग्रेसिव वेब ऐप (PWA) जो दैनिक वेतन भोगी मजदूरों को तकनीकी बाधाओं को पार कर तुरंत काम खोजने में मदद करता है।",
+        "workforce-feat-1": "आवाज आधारित स्थानीय भाषा में नेविगेशन",
+        "workforce-feat-2": "सीधे बैंक खाते में दैनिक भुगतान",
+        "workforce-feat-3": "सत्यापित डिजिटल व्यावसायिक पहचान",
+        "workforce-cta": "कार्यबल पायलट में शामिल हों",
+        "employer-title": "किसानों और ठेकेदारों के लिए",
+        "employer-desc": "पूर्व-सत्यापित श्रम अनुपालन, पारदर्शी वॉलेट-आधारित भुगतान और वास्तविक समय उपस्थिति ट्रैकर वाला एक मजबूत संस्थागत SaaS डैशबोर्ड।",
+        "employer-feat-1": "सुरक्षित प्रीपेड भर्ती वॉलेट",
+        "employer-feat-2": "स्वचालित जियोफेंस्ड उपस्थिति",
+        "employer-feat-3": "त्वरित अनुपालन और कर रिपोर्टिंग",
+        "employer-cta": "SaaS डैशबोर्ड खोलें",
+        "footer-info": "पारदर्शिता, गरिमा और तकनीकी पहुंच के साथ भारत के ग्रामीण कार्यबल के बुनियादी ढांचे का पुनर्निर्माण।",
+        "footer-email-title": "ईमेल प्रशासन",
+        "footer-call-title": "प्रोग्राम कार्यालय को कॉल करें",
+        "footer-location-title": "स्थान",
+        "footer-location-text": "बेंगलुरु, कर्नाटक",
+        "footer-copy": "&copy; 2026 जीविक्षा प्राइवेट लिमिटेड। सर्वाधिकार सुरक्षित।",
+        "footer-link-privacy": "गोपनीयता नीति",
+        "footer-link-terms": "सेवा की शर्तें",
+        "modal-title": "पायलट कार्यक्रम में शामिल हों",
+        "modal-subtitle": "JEEVIKSHA के साथ साझेदारी करने और शुरुआती पहुंच सुरक्षित करने के लिए नीचे अपना विवरण दर्ज करें।",
+        "modal-label-name": "पूरा नाम",
+        "modal-placeholder-name": "अपना पूरा नाम दर्ज करें",
+        "modal-label-role": "आप कौन हैं?",
+        "role-title-workforce": "कार्यबल / मजदूर",
+        "role-desc-workforce": "स्थानीय और उचित वेतन वाले काम की तलाश में",
+        "role-title-farmer": "किसान",
+        "role-desc-farmer": "खेती के लिए समय पर मजदूरों की आवश्यकता है",
+        "role-title-contractor": "ठेकेदार",
+        "role-desc-contractor": "निर्माण या नागरिक कार्यों के लिए भर्ती",
+        "role-title-institution": "संस्था",
+        "role-desc-institution": "सरकारी या कॉर्पोरेट भागीदार",
+        "modal-label-languages": "बोली जाने वाली भाषाएं (जो लागू हों उन्हें चुनें)",
+        "modal-label-phone": "संपर्क नंबर (WhatsApp को प्राथमिकता)",
+        "modal-placeholder-phone": "10 अंकों का मोबाइल नंबर",
+        "modal-submit": "अनुरोध सबमिट करें",
+        "success-title": "अनुरोध सबमिट हो गया!",
+        "success-desc": "पहुंचने के लिए धन्यवाद। हमारा कार्यक्रम कार्यालय अगले चरणों में आपका मार्गदर्शन करने के लिए 24 घंटे के भीतर <strong id=\"success-phone\"></strong> पर आपसे संपर्क करेगा।",
+        "success-cta-whatsapp": "WhatsApp कम्युनिटी से जुड़ें",
+        "success-cta-done": "हो गया"
+      },
+      kn: {
+        "nav-vision": "ದೃಷ್ಟಿಕೋನ",
+        "nav-how-it-works": "ಕೆಲಸ ಮಾಡುವ ವಿಧಾನ",
+        "nav-who-we-serve": "ಸೇವೆ ಯಾರಿಗೆ",
+        "nav-join-pilot": "ಪೈಲಟ್‌ಗೆ ಸೇರಿ",
+        "hero-title": "ಭಾರತದ ಆರ್ಥಿಕತೆಯ <span class=\"highlight\">ಬುನಾದಿಯನ್ನು ಸಂಘಟಿಸುವುದು</span>",
+        "hero-subtitle": "ಗ್ರಾಮೀಣ ಕಾರ್ಮಿಕರನ್ನು ರೈತರು ಮತ್ತು ಗುತ್ತಿಗೆದಾರರೊಂದಿಗೆ ನೇರವಾಗಿ ಸಂಪರ್ಕಿಸುವ ಡಿಜಿಟಲ್ ವ್ಯವಸ್ಥೆ. ಮಧ್ಯವರ್ತಿಗಳಿಲ್ಲ. ಕಮಿಷನ್ ಇಲ್ಲ. ಜೀವನೋಪಾಯ, ಘನತೆ ಮತ್ತು ನ್ಯಾಯಯುತ ವೇತನದ ಭರವಸೆ.",
+        "hero-cta-primary": "ಪೈಲಟ್ ಕಾರ್ಯಕ್ರಮಕ್ಕೆ ಸೇರಿ",
+        "hero-cta-secondary": "ನಮ್ಮ ದೃಷ್ಟಿಕೋನ ಓದಿ",
+        "vision-badge": "ಸಶಕ್ತ ಭಾರತ",
+        "vision-title": "ಜೀವೀಕ್ಷಾದ ಹಿಂದಿನ ದೃಷ್ಟಿಕೋನ",
+        "vision-text": "ದಶಕಗಳಿಂದ ಭಾರತದ ಗ್ರಾಮೀಣ ಕಾರ್ಮಿಕರು ಮಧ್ಯವರ್ತಿಗಳ ಶೋಷಣೆ ಮತ್ತು ಮಾಹಿತಿಯ ಕೊರತೆಯ ಜಾಲದಲ್ಲಿ ಸಿಲುಕಿದ್ದಾರೆ. ಗ್ರಾಮೀಣ ಶ್ರಮಕ್ಕೆ ಘನತೆ, ಪಾರದರ್ಶಕತೆ ಮತ್ತು ಡಿಜಿಟಲ್ ಸಂಪರ್ಕ ನೀಡುವುದು ನಮ್ಮ ದೃಷ್ಟಿಕೋನವಾಗಿದೆ. ನಾವು ಜೀವನೋಪಾಯವನ್ನು ರಕ್ಷಿಸುವ ಮತ್ತು ನ್ಯಾಯಯುತ ವೇತನವನ್ನು ಖಾತರಿಪಡಿಸುವ ಡಿಜಿಟಲ್ ಮೂಲಸೌಕರ್ಯವನ್ನು ತರುತ್ತಿದ್ದೇವೆ.",
+        "compare-title": "ಗ್ರಾಮೀಣ ಉದ್ಯೋಗದ ಮರು-ರೂಪೀಕರಣ",
+        "compare-subtitle": "ಸಾಂಪ್ರದಾಯಿಕ ಶೋಷಣೆಯ ಗುತ್ತಿಗೆದಾರ ವ್ಯವಸ್ಥೆಗೂ ನಮ್ಮ ಆಧುನಿಕ ಡಿಜಿಟಲ್ ವ್ಯವಸ್ಥೆಗೂ ಇರುವ ವ್ಯತ್ಯಾಸವನ್ನು ಹೋಲಿಸಿ ನೋಡಿ.",
+        "problem-title": "ಸಾಂಪ್ರದಾಯಿಕ ತೊಂದರೆಗಳು",
+        "problem-1-title": "ಗುತ್ತಿಗೆದಾರ ವ್ಯವಸ್ಥೆಯ ಶೋಷಣೆ",
+        "problem-1-desc": "ಮಧ್ಯವರ್ತಿಗಳು ತಮಗೆ ಇಷ್ಟಬಂದಂತೆ ವೇತನ ನಿರ್ಧರಿಸಿ, ಕಾರ್ಮಿಕರ ದಿನದ ಗಳಿಕೆಯಲ್ಲಿ ಹೆಚ್ಚಿನ ಹಣವನ್ನು ಕಮಿಷನ್ ರೂಪದಲ್ಲಿ ಪಡೆಯುತ್ತಾರೆ.",
+        "problem-2-title": "ನಿರಂತರ ಕಾಲೋಚಿತ ಕಾರ್ಮಿಕರ ಕೊರತೆ",
+        "problem-2-desc": "ವಲಯಗಳ ನಡುವೆ ಸರಿಯಾದ ಸಂಘಟನೆ ಇಲ್ಲದಿರುವುದರಿಂದ ಕೃಷಿ ವಲಯದಲ್ಲಿ ಬಿತ್ತನೆ ಮತ್ತು ಕೊಯ್ಲಿನ ಸಮಯದಲ್ಲಿ ತೀವ್ರ ಕಾರ್ಮಿಕರ ಕೊರತೆ ಉಂಟಾಗುತ್ತದೆ.",
+        "problem-3-title": "ಮಾಹಿತಿಯ ಕೊರತೆ",
+        "problem-3-desc": "ಉದ್ಯೋಗದಾತರಿಗೆ ಸ್ಥಳೀಯವಾಗಿ ಲಭ್ಯವಿರುವ ಕಾರ್ಮಿಕರ ಮಾಹಿತಿ ಸಿಗುವುದಿಲ್ಲ, ಕಾರ್ಮಿಕರಿಗೆ ತಮ್ಮದೇ ಆದ ಡಿಜಿಟಲ್ ಗುರುತು ಇರುವುದಿಲ್ಲ.",
+        "solution-title": "ಜೀವೀಕ್ಷಾ (JEEVIKSHA) ಪರಿಹಾರ",
+        "solution-1-title": "0% ಕಾರ್ಮಿಕ ಕಮಿಷನ್",
+        "solution-1-desc": "ಕಾರ್ಮಿಕರಿಗೆ ಯಾವುದೇ ಕಮಿಷನ್ ಶುಲ್ಕ ಇರುವುದಿಲ್ಲ. ಅವರು ಗಳಿಸಿದ ಸಂಪೂರ್ಣ ದಿನಗೂಲಿ ನೇರವಾಗಿ ಅವರ ಬ್ಯಾಂಕ್ ಖಾತೆಗೆ ಜಮೆಯಾಗುತ್ತದೆ.",
+        "solution-2-title": "ಅಲ್ಗಾರಿದಮಿಕ್ ಮ್ಯಾಚಿಂಗ್ ಎಂಜಿನ್",
+        "solution-2-desc": "ಉದ್ಯೋಗದಾತರ ಬೇಡಿಕೆಯನ್ನು ತಕ್ಷಣವೇ ಪರಿಶೀಲಿಸಿ, ಜಿಯೋಫೆನ್ಸ್ಡ್ ಪಿನ್ ಕೋಡ್ ಆಧಾರದ ಮೇಲೆ ಎಲ್ಲಿ ಕಾರ್ಮಿಕರ ಅಗತ್ಯವಿದೆಯೋ ಅಲ್ಲಿ ನಿಯೋಜಿಸುತ್ತದೆ.",
+        "solution-3-title": "ಪ್ರೋಗ್ರೆಸಿವ್ ವೆಬ್ ಆಪ್ (PWA)",
+        "solution-3-desc": "ಕಡಿಮೆ ಬಜೆಟ್ ಫೋನ್‌ಗಳಲ್ಲಿ ಮತ್ತು ಕಡಿಮೆ ಇಂಟರ್ನೆಟ್ ಸಂಪರ್ಕವಿರುವ ಗ್ರಾಮೀಣ ಪ್ರದೇಶಗಳಲ್ಲಿ ಸರಾಗವಾಗಿ ಚಲಿಸುವಂತೆ ವಿನ್ಯಾಸಗೊಳಿಸಲಾಗಿದೆ.",
+        "serve-title": "ಭಾರತದ ಉಭಯ ಮಾರುಕಟ್ಟೆಗಾಗಿ ವಿನ್ಯಾಸಿತ",
+        "serve-subtitle": "ಒಂದೇ ಸಂಯೋಜಿತ ವ್ಯವಸ್ಥೆಯ ಮೂಲಕ ಎರಡು ವಿಭಿನ್ನ ಸವಾಲುಗಳನ್ನು ಪರಿಹರಿಸುವ ತಂತ್ರಜ್ಞಾನ.",
+        "workforce-title": "ಕಾರ್ಮಿಕರಿಗಾಗಿ",
+        "workforce-desc": "ಧ್ವನಿ ಮತ್ತು ಪ್ರಾದೇಶಿಕ ಭಾಷೆಗಳನ್ನು ಬೆಂಬಲಿಸುವ ಪ್ರೋಗ್ರೆಸಿವ್ ವೆಬ್ ಆಪ್ (PWA) ಮೂಲಕ ಗ್ರಾಮೀಣ ಕಾರ್ಮಿಕರು ಸುಲಭವಾಗಿ ತಕ್ಷಣ ಉದ್ಯೋಗ ಕಂಡುಕೊಳ್ಳಬಹುದು.",
+        "workforce-feat-1": "ಧ್ವನಿ ಆಧಾರಿತ ಪ್ರಾದೇಶಿಕ ಭಾಷೆಯ ನೆವಿಗೇಷನ್",
+        "workforce-feat-2": "ನೇರವಾಗಿ ಬ್ಯಾಂಕ್ ಖಾತೆಗೆ ದಿನದ ವೇತನ ಜಮೆ",
+        "workforce-feat-3": "ಸತ್ಯೀಕೃತ ಡಿಜಿಟಲ್ ವೃತ್ತಿಪರ ಗುರುತು",
+        "workforce-cta": "ಕಾರ್ಮಿಕ ಪೈಲಟ್‌ಗೆ ಸೇರಿ",
+        "employer-title": "ರೈತರು ಮತ್ತು ಗುತ್ತಿಗೆದಾರರಿಗಾಗಿ",
+        "employer-desc": "ಕಾರ್ಮಿಕ ನಿಯಮಗಳ ಅನುಸರಣೆ, ಸುರಕ್ಷಿತ ವಾಲೆಟ್ ಪಾವತಿಗಳು ಮತ್ತು ಹಾಜರಾತಿ ಟ್ರ್ಯಾಕರ್ ಒಳಗೊಂಡಿರುವ ಸಂಸ್ಥೆಗಳಿಗೆ ಸೂಕ್ತವಾದ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್.",
+        "employer-feat-1": "ಸುರಕ್ಷಿತ ಪ್ರಿಪೇಯ್ಡ್ ವಾಲೆಟ್",
+        "employer-feat-2": "ಸ್ವಯಂಚಾಲಿತ ಜಿಯೋಫೆನ್ಸ್ಡ್ ಹಾಜರಾತಿ",
+        "employer-feat-3": "ತ್ವರಿತ ನಿಯಮಗಳ ಅನುಸರಣೆ ಮತ್ತು ತೆರಿಗೆ ವರದಿ",
+        "employer-cta": "SaaS ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ತೆರೆಯಿರಿ",
+        "footer-info": "ಪಾರದರ್ಶಕತೆ, ಘನತೆ ಮತ್ತು ತಂತ್ರಜ್ಞಾನದ ಪ್ರವೇಶದೊಂದಿಗೆ ಭಾರತದ ಗ್ರಾಮೀಣ ಕಾರ್ಮಿಕ ವಲಯದ ಮರುನಿರ್ಮಾಣ.",
+        "footer-email-title": "ಇಮೇಲ್ ಆಡಳಿತ",
+        "footer-call-title": "ಕಾರ್ಯಕ್ರಮದ ಕಚೇರಿಗೆ ಕರೆ ಮಾಡಿ",
+        "footer-location-title": "ಸ್ಥಳ",
+        "footer-location-text": "ಬೆಂಗಳೂರು, ಕರ್ನಾಟಕ",
+        "footer-copy": "&copy; 2026 ಜೀವೀಕ್ಷಾ ಪ್ರೈವೇಟ್ ಲಿಮಿಟೆಡ್. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.",
+        "footer-link-privacy": "ಗೌಪ್ಯತಾ ನೀತಿ",
+        "footer-link-terms": "ಸೇವಾ ನಿಯಮಗಳು",
+        "modal-title": "ಪೈಲಟ್ ಕಾರ್ಯಕ್ರಮಕ್ಕೆ ಸೇರಿ",
+        "modal-subtitle": "JEEVIKSHA ನೊಂದಿಗೆ ಪಾಲುದಾರರಾಗಲು ಮತ್ತು ಆರಂಭಿಕ ಪ್ರವೇಶವನ್ನು ಪಡೆಯಲು ನಿಮ್ಮ ವಿವರಗಳನ್ನು ಕೆಳಗೆ ನಮೂದಿಸಿ.",
+        "modal-label-name": "ಪೂರ್ಣ ಹೆಸರು",
+        "modal-placeholder-name": "ನಿಮ್ಮ ಪೂರ್ಣ ಹೆಸರನ್ನು ನಮೂದಿಸಿ",
+        "modal-label-role": "ನೀವು ಯಾರು?",
+        "role-title-workforce": "ಕಾರ್ಮಿಕರು / ದಿನಗೂಲಿ",
+        "role-desc-workforce": "ಸ್ಥಳೀಯ ಮತ್ತು ನ್ಯಾಯಯುತ ವೇತನದ ಕೆಲಸದ ಹುಡುಕಾಟದಲ್ಲಿರುವವರು",
+        "role-title-farmer": "ರೈತರು",
+        "role-desc-farmer": "ಕೃಷಿ ಕೆಲಸಗಳಿಗಾಗಿ ಸಮಯಕ್ಕೆ ಸರಿಯಾಗಿ ಕಾರ್ಮಿಕರ ಅಗತ್ಯವಿದೆ",
+        "role-title-contractor": "ಗುತ್ತಿಗೆದಾರರು",
+        "role-desc-contractor": "ನಿರ್ಮಾಣ ಅಥವಾ ನಾಗರಿಕ ಕೆಲಸಗಳಿಗಾಗಿ ನೇಮಕಾತಿ",
+        "role-title-institution": "ಸಂಸ್ಥೆ",
+        "role-desc-institution": "ಸರ್ಕಾರ ಅಥವಾ ಕಾರ್ಪೊರೇಟ್ ಪಾಲುದಾರರು",
+        "modal-label-languages": "ಮಾತನಾಡುವ ಭಾಷೆಗಳು (ಅನ್ವಯವಾಗುವದನ್ನು ಆರಿಸಿ)",
+        "modal-label-phone": "ಸಂಪರ್ಕ ಸಂಖ್ಯೆ (WhatsApp ಆದ್ಯತೆ)",
+        "modal-placeholder-phone": "10 ಅಂಕಿಯ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
+        "modal-submit": "ವಿನಂತಿ ಸಲ್ಲಿಸಿ",
+        "success-title": "ವಿನಂತಿ ಯಶಸ್ವಿಯಾಗಿ ಸಲ್ಲಿಕೆಯಾಗಿದೆ!",
+        "success-desc": "ಸಂಪರ್ಕಿಸಿದ್ದಕ್ಕಾಗಿ ಧನ್ಯವಾದಗಳು. ಮುಂದಿನ ಹಂತಗಳಿಗಾಗಿ ನಮ್ಮ ಕಚೇರಿಯ ಸಿಬ್ಬಂದಿ 24 ಗಂಟೆಗಳ ಒಳಗೆ <strong id=\"success-phone\"></strong> ಸಂಖ್ಯೆಗೆ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತಾರೆ.",
+        "success-cta-whatsapp": "WhatsApp ಸಮುದಾಯಕ್ಕೆ ಸೇರಿ",
+        "success-cta-done": "ಮುಕ್ತಾಯ"
+      }
+    };
+
+    // DOM Translation function
+    const updateDOMTranslations = (lang) => {
+      // 1. Text translations
+      document.querySelectorAll("[data-i18n]").forEach(element => {
+        const key = element.getAttribute("data-i18n");
+        if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) {
+          // If the element has success-phone placeholder, preserve its binding reference
+          if (key === "success-desc") {
+            const phoneVal = document.getElementById("success-phone") ? document.getElementById("success-phone").innerText : "";
+            element.innerHTML = TRANSLATIONS[lang][key];
+            const strongEl = element.querySelector("#success-phone");
+            if (strongEl) {
+              strongEl.innerText = phoneVal;
+            }
+          } else {
+            element.innerHTML = TRANSLATIONS[lang][key];
+          }
+        }
+      });
+
+      // 2. Input placeholder translations
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(element => {
+        const key = element.getAttribute("data-i18n-placeholder");
+        if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) {
+          element.placeholder = TRANSLATIONS[lang][key];
+        }
+      });
+
+      // Update HTML lang tag
+      document.documentElement.lang = lang;
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Language selectors UI components
+      const langOverlay = document.getElementById('language-overlay');
+      const langOptions = document.querySelectorAll('.lang-option');
+      const btnLangContinue = document.getElementById('btn-lang-continue');
+      const navbarLangSelect = document.getElementById('navbar-lang-select');
+      
+      let selectedLanguage = '';
+
+      // 1. Check if language is already saved in localStorage
+      const savedLang = localStorage.getItem('jeeviksha_lang');
+      if (savedLang) {
+        // Bypass overlay
+        langOverlay.style.display = 'none';
+        navbarLangSelect.value = savedLang;
+        updateDOMTranslations(savedLang);
+      } else {
+        // Display overlay and check default
+        langOverlay.style.display = 'flex';
+      }
+
+      // 2. Language Selection interactions
+      langOptions.forEach(option => {
+        option.addEventListener('click', () => {
+          langOptions.forEach(opt => opt.classList.remove('selected'));
+          option.classList.add('selected');
+          selectedLanguage = option.getAttribute('data-lang');
+          btnLangContinue.disabled = false;
+        });
+      });
+
+      // 3. Continue on language select overlay
+      btnLangContinue.addEventListener('click', () => {
+        if (selectedLanguage) {
+          localStorage.setItem('jeeviksha_lang', selectedLanguage);
+          updateDOMTranslations(selectedLanguage);
+          navbarLangSelect.value = selectedLanguage;
+          
+          // Smooth fade out
+          langOverlay.classList.add('fade-out');
+          setTimeout(() => {
+            langOverlay.style.display = 'none';
+          }, 400);
+        }
+      });
+
+      // 4. Change language from Navbar dropdown at any time
+      navbarLangSelect.addEventListener('change', (e) => {
+        const newLang = e.target.value;
+        localStorage.setItem('jeeviksha_lang', newLang);
+        updateDOMTranslations(newLang);
+      });
+
+      // Mobile Drawer Selectors
+      const menuToggle = document.getElementById('menu-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      const navLinks = document.querySelectorAll('.nav-link, .nav-menu .btn');
+
+      // Toggle Mobile Menu Drawer
+      const toggleMenu = () => {
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !isExpanded);
+        navMenu.classList.toggle('active');
+        document.body.style.overflow = isExpanded ? 'initial' : 'hidden'; // Lock body scroll when drawer open
+      };
+
+      menuToggle.addEventListener('click', toggleMenu);
+
+      // Close menu when clicking a link or CTA
+      navLinks.forEach(link => {
+        // Don't close mobile menu when clicking language selector wrapper inside nav
+        if (link.closest('.nav-lang-select-container')) return;
+        
+        link.addEventListener('click', () => {
+          if (navMenu.classList.contains('active')) {
+            toggleMenu();
+          }
+        });
+      });
+
+      // Modal Selectors
+      const pilotModal = document.getElementById('pilot-modal');
+      const pilotForm = document.getElementById('pilot-form');
+      const pilotSuccess = document.getElementById('pilot-success');
+      const closeBtn = document.getElementById('modal-close');
+      const doneBtn = document.getElementById('btn-success-close');
+      const formSpinner = document.getElementById('form-spinner');
+      const successPhone = document.getElementById('success-phone');
+
+      const openModal = (preselectedRole = 'workforce') => {
+        const radioToSelect = pilotForm.querySelector(`input[name="role"][value="${preselectedRole}"]`);
+        if (radioToSelect) {
+          radioToSelect.checked = true;
+        }
+        pilotModal.classList.add('open');
+        pilotModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden'; // Disable body scroll
+        document.getElementById('pilot-name').focus();
+      };
+
+      const closeModal = () => {
+        pilotModal.classList.remove('open');
+        pilotModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = 'initial'; // Restore body scroll
+
+        // Reset form after transition animation completes
+        setTimeout(() => {
+          pilotForm.reset();
+          pilotForm.style.display = 'flex';
+          pilotSuccess.style.display = 'none';
+          formSpinner.style.display = 'none';
+          pilotForm.querySelector('button[type="submit"]').disabled = false;
+        }, 300);
+      };
+
+      // Connect CTAs to form overlay
+      const navCta = document.getElementById('cta-nav-pilot');
+      const heroCta = document.getElementById('cta-hero-primary');
+      const workforceCta = document.getElementById('cta-serve-workforce');
+      const employerCta = document.getElementById('cta-serve-employers');
+
+      if (navCta) {
+        navCta.addEventListener('click', (e) => {
+          e.preventDefault();
+          openModal('workforce');
+        });
+      }
+
+      if (heroCta) {
+        heroCta.addEventListener('click', (e) => {
+          e.preventDefault();
+          openModal('workforce');
+        });
+      }
+
+      if (workforceCta) {
+        workforceCta.addEventListener('click', (e) => {
+          e.preventDefault();
+          openModal('workforce');
+        });
+      }
+
+      if (employerCta) {
+        employerCta.addEventListener('click', (e) => {
+          e.preventDefault();
+          openModal('farmer');
+        });
+      }
+
+      closeBtn.addEventListener('click', closeModal);
+      doneBtn.addEventListener('click', closeModal);
+
+      // Close modal on click outside of panel
+      pilotModal.addEventListener('click', (e) => {
+        if (e.target === pilotModal) {
+          closeModal();
+        }
+      });
+
+      // Handle Form Submit (Push to Cloud Firestore with offline fallback)
+      pilotForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const submitBtn = pilotForm.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        formSpinner.style.display = 'inline-block';
+
+        const nameVal = document.getElementById('pilot-name').value.trim();
+        const roleVal = pilotForm.querySelector('input[name="role"]:checked')?.value || 'workforce';
+        const checkedLanguages = Array.from(pilotForm.querySelectorAll('input[name="languages"]:checked')).map(el => el.value);
+        const phoneVal = document.getElementById('pilot-phone').value.trim();
+
+        const submissionData = {
+          name: nameVal,
+          role: roleVal,
+          languages: checkedLanguages,
+          phone: '+91 ' + phoneVal
+        };
+
+        const showSuccessUI = () => {
+          formSpinner.style.display = 'none';
+          pilotForm.style.display = 'none';
+          successPhone.innerText = '+91 ' + phoneVal;
+          pilotSuccess.style.display = 'flex';
+
+          // 🎉 Confetti burst on success
+          if (typeof confetti === 'function') {
+            const end = Date.now() + 2200;
+            const colors = ['#00246B', '#CADCFC', '#ffffff', '#5A6B82'];
+            (function burst() {
+              confetti({
+                particleCount: 6,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0, y: 0.65 },
+                colors
+              });
+              confetti({
+                particleCount: 6,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1, y: 0.65 },
+                colors
+              });
+              if (Date.now() < end) requestAnimationFrame(burst);
+            })();
+          }
+        };
+
+        if (isFirebaseConfigured && db) {
+          // Send to Cloud Firestore with a 5-second connection timeout safety
+          const firestorePromise = addDoc(collection(db, "pilot_submissions"), {
+            ...submissionData,
+            timestamp: serverTimestamp()
+          });
+
+          const timeoutPromise = new Promise((_, reject) => 
+            setTimeout(() => reject(new Error("Firestore write timed out")), 5000)
+          );
+
+          Promise.race([firestorePromise, timeoutPromise])
+            .then((docRef) => {
+              console.log("JEEVIKSHA: Document successfully written to Firestore with ID:", docRef.id);
+              showSuccessUI();
+            })
+            .catch((error) => {
+              console.error("JEEVIKSHA: Firestore write failed. Falling back to local storage.", error);
+              saveSubmissionLocally(submissionData);
+              showSuccessUI();
+            });
+        } else {
+          // Use offline fallback mode (simulated delay for natural feeling)
+          setTimeout(() => {
+            saveSubmissionLocally(submissionData);
+            showSuccessUI();
+          }, 1200);
+        }
+      });
+
+      // Accessibility: close on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          if (pilotModal.classList.contains('open')) {
+            closeModal();
+          } else if (navMenu.classList.contains('active')) {
+            toggleMenu();
+          }
+        }
+      });
+    });
+
+    // ==========================================================
+    // Scroll-Reveal: IntersectionObserver
+    // ==========================================================
+    (function () {
+      // Skip entirely if user prefers reduced motion (CSS also handles it,
+      // but skipping the observer avoids toggling classes at all).
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const revealEls = document.querySelectorAll('.reveal');
+      if (!revealEls.length) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target); // fire only once
+            }
+          });
+        },
+        {
+          threshold: 0.15,   // trigger when 15% of element is in view
+          rootMargin: '0px 0px -40px 0px', // slight bottom buffer
+        }
+      );
+
+      revealEls.forEach((el) => observer.observe(el));
+    })();
+
+    // ==========================================================
+    // Animated Theme Toggler
+    // ==========================================================
+    (function () {
+      const DARK_KEY = 'jeeviksha_theme';
+      const root = document.documentElement;
+      const toggleBtn = document.getElementById('theme-toggle');
+
+      function applyTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        localStorage.setItem(DARK_KEY, theme);
+        toggleBtn && toggleBtn.setAttribute(
+          'aria-label',
+          theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
+        );
+      }
+
+      // Restore saved preference or use system preference
+      const saved = localStorage.getItem(DARK_KEY);
+      const prefDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(saved || (prefDark ? 'dark' : 'light'));
+
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+          const current = root.getAttribute('data-theme');
+          applyTheme(current === 'dark' ? 'light' : 'dark');
+        });
+      }
+    })();
+
+    // ==========================================================
+    // Magic Card — modal spotlight
+    // ==========================================================
+    (function () {
+      const card = document.getElementById('modal-card');
+      if (!card) return;
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width)  * 100;
+        const y = ((e.clientY - rect.top)  / rect.height) * 100;
+        card.style.setProperty('--mx', x + '%');
+        card.style.setProperty('--my', y + '%');
+      });
+    })();
+
+    // ==========================================================
+    // Mouse Interaction Suite
+    // Skip all effects if user prefers reduced motion
+    // ==========================================================
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      // ── 1. GLOBAL CURSOR GLOW ─────────────────────────────
+      // Tracks mouse across the full page via CSS custom props
+      // on <html>. The CSS ::before on body renders the glow.
+      let rafGlow;
+      document.addEventListener('mousemove', (e) => {
+        cancelAnimationFrame(rafGlow);
+        rafGlow = requestAnimationFrame(() => {
+          document.documentElement.style.setProperty('--gx', e.clientX + 'px');
+          document.documentElement.style.setProperty('--gy', e.clientY + 'px');
+        });
+      });
+
+      // ── 2. 3D CARD TILT ───────────────────────────────────
+      // Applied to serve-cards and comparison-columns
+      const TILT_MAX = 8; // degrees
+      const tiltTargets = document.querySelectorAll(
+        '.serve-card, .comparison-column'
+      );
+
+      tiltTargets.forEach((el) => {
+        let rafTilt;
+
+        el.addEventListener('mousemove', (e) => {
+          cancelAnimationFrame(rafTilt);
+          rafTilt = requestAnimationFrame(() => {
+            const rect = el.getBoundingClientRect();
+            const cx   = rect.left + rect.width  / 2;
+            const cy   = rect.top  + rect.height / 2;
+            const dx   = (e.clientX - cx) / (rect.width  / 2); // -1 … +1
+            const dy   = (e.clientY - cy) / (rect.height / 2);
+            const rotX = -dy * TILT_MAX;
+            const rotY =  dx * TILT_MAX;
+            el.style.transform =
+              `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.03)`;
+            el.style.transition = 'transform 0.08s linear';
+            // Inner spotlight
+            const px = ((e.clientX - rect.left) / rect.width)  * 100;
+            const py = ((e.clientY - rect.top)  / rect.height) * 100;
+            el.style.setProperty('--tx', px + '%');
+            el.style.setProperty('--ty', py + '%');
+          });
+        });
+
+        el.addEventListener('mouseleave', () => {
+          cancelAnimationFrame(rafTilt);
+          el.style.transform = 'perspective(800px) rotateX(0) rotateY(0) scale(1)';
+          el.style.transition = 'transform 0.5s cubic-bezier(0.34,1.56,0.64,1)';
+        });
+      });
+
+      // ── 3. MAGNETIC BUTTONS ───────────────────────────────
+      // CTAs gently attract toward the cursor while hovered
+      const MAG_STRENGTH = 0.35;
+      const magnetBtns = document.querySelectorAll(
+        '.btn-primary, .btn-secondary, .btn-whatsapp'
+      );
+
+      magnetBtns.forEach((btn) => {
+        let rafMag;
+
+        btn.addEventListener('mousemove', (e) => {
+          cancelAnimationFrame(rafMag);
+          rafMag = requestAnimationFrame(() => {
+            const rect = btn.getBoundingClientRect();
+            const cx   = rect.left + rect.width  / 2;
+            const cy   = rect.top  + rect.height / 2;
+            const dx   = (e.clientX - cx) * MAG_STRENGTH;
+            const dy   = (e.clientY - cy) * MAG_STRENGTH;
+            btn.style.transform = `translate(${dx}px, ${dy}px) scale(1.04)`;
+            btn.style.transition = 'transform 0.1s linear';
+          });
+        });
+
+        btn.addEventListener('mouseleave', () => {
+          cancelAnimationFrame(rafMag);
+          btn.style.transform = '';
+          btn.style.transition = 'transform 0.5s cubic-bezier(0.34,1.56,0.64,1)';
+        });
+      });
+
+      // ── 4. HERO PARALLAX ──────────────────────────────────
+      // The hero image container gently drifts with the cursor
+      const heroImg = document.querySelector('.hero-image-wrapper');
+      if (heroImg) {
+        const PAR_STRENGTH = 0.018;
+        let rafPar;
+        document.addEventListener('mousemove', (e) => {
+          cancelAnimationFrame(rafPar);
+          rafPar = requestAnimationFrame(() => {
+            const cx  = window.innerWidth  / 2;
+            const cy  = window.innerHeight / 2;
+            const dx  = (e.clientX - cx) * PAR_STRENGTH;
+            const dy  = (e.clientY - cy) * PAR_STRENGTH;
+            heroImg.style.transform =
+              `translate(${dx}px, ${dy}px) scale(1.02)`;
+            heroImg.style.transition = 'transform 0.12s linear';
+          });
+        });
+      }
+
+      // ── 5. HEADER SPOTLIGHT ───────────────────────────────
+      // Tracks cursor across the navbar, updates --hx/--hy on <header>
+      const headerEl = document.querySelector('header');
+      if (headerEl) {
+        let rafHeader;
+        headerEl.addEventListener('mousemove', (e) => {
+          cancelAnimationFrame(rafHeader);
+          rafHeader = requestAnimationFrame(() => {
+            const rect = headerEl.getBoundingClientRect();
+            headerEl.style.setProperty('--hx', (e.clientX - rect.left) + 'px');
+            headerEl.style.setProperty('--hy', (e.clientY - rect.top)  + 'px');
+          });
+        });
+        headerEl.addEventListener('mouseleave', () => {
+          // Park the glow off-screen
+          headerEl.style.setProperty('--hx', '-9999px');
+          headerEl.style.setProperty('--hy', '-9999px');
+        });
+      }
+
+      // ── 6. MAGNETIC NAV LINKS ─────────────────────────────
+      const NAV_MAG = 0.28;
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach((link) => {
+        let rafNav;
+        link.addEventListener('mousemove', (e) => {
+          cancelAnimationFrame(rafNav);
+          rafNav = requestAnimationFrame(() => {
+            const rect = link.getBoundingClientRect();
+            const cx   = rect.left + rect.width  / 2;
+            const cy   = rect.top  + rect.height / 2;
+            const dx   = (e.clientX - cx) * NAV_MAG;
+            const dy   = (e.clientY - cy) * NAV_MAG;
+            link.style.transform = `translate(${dx}px, ${dy}px)`;
+            link.style.transition = 'transform 0.08s linear, color var(--transition-fast)';
+          });
+        });
+        link.addEventListener('mouseleave', () => {
+          cancelAnimationFrame(rafNav);
+          link.style.transform = '';
+          link.style.transition = 'transform 0.45s cubic-bezier(0.34,1.56,0.64,1), color var(--transition-fast)';
+        });
+      });
+
+      // ── 7. MAGNETIC THEME TOGGLE ──────────────────────────
+      const themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) {
+        let rafTheme;
+        const TT_MAG = 0.4;
+        themeToggle.addEventListener('mousemove', (e) => {
+          cancelAnimationFrame(rafTheme);
+          rafTheme = requestAnimationFrame(() => {
+            const rect = themeToggle.getBoundingClientRect();
+            const cx   = rect.left + rect.width  / 2;
+            const cy   = rect.top  + rect.height / 2;
+            const dx   = (e.clientX - cx) * TT_MAG;
+            const dy   = (e.clientY - cy) * TT_MAG;
+            themeToggle.style.transform = `translate(${dx}px, ${dy}px) scale(1.12)`;
+            themeToggle.style.transition = 'transform 0.08s linear';
+          });
+        });
+        themeToggle.addEventListener('mouseleave', () => {
+          cancelAnimationFrame(rafTheme);
+          themeToggle.style.transform = '';
+          themeToggle.style.transition = 'transform 0.45s cubic-bezier(0.34,1.56,0.64,1)';
+        });
+      }
+
+      // ── 8. HAMBURGER TILT ─────────────────────────────────
+      // Subtle 3D tilt on the mobile hamburger button
+      const menuToggle = document.getElementById('menu-toggle');
+      if (menuToggle) {
+        menuToggle.addEventListener('mousemove', (e) => {
+          const rect = menuToggle.getBoundingClientRect();
+          const dx   = ((e.clientX - rect.left) / rect.width  - 0.5) * 20;
+          const dy   = ((e.clientY - rect.top)  / rect.height - 0.5) * 20;
+          menuToggle.style.transform =
+            `perspective(300px) rotateX(${-dy}deg) rotateY(${dx}deg) scale(1.1)`;
+          menuToggle.style.transition = 'transform 0.06s linear';
+        });
+        menuToggle.addEventListener('mouseleave', () => {
+          menuToggle.style.transform = '';
+          menuToggle.style.transition = 'transform 0.4s cubic-bezier(0.34,1.56,0.64,1)';
+        });
+      }
+
+    })(); // end mouse suite
+  </script>
+</body>
+
+
+</html>
